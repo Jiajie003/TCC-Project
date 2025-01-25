@@ -70,12 +70,12 @@ CREATE TABLE `orders` (
   `pay_method` varchar(50) NOT NULL,
   `pay_status` int(11) NOT NULL,
   `order_status` int(11) NOT NULL DEFAULT 0,
-  `order_date` DATETIME NOT NULL DEFAULT current_timestamp()
+  `order_date` DATE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `orders`
---
+-- --
+-- -- Dumping data for table `orders`
+-- --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `delivered_to`, `phone_no`, `deliver_address`, `pay_method`, `pay_status`, `order_status`, `order_date`) VALUES
 (1, 2, 'Self', '9802234675', 'Matepani-12', 'Cash', 0, 0, '2022-04-10'),
@@ -116,7 +116,7 @@ CREATE TABLE `product` (
   `product_image` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `uploaded_date` date NOT NULL DEFAULT current_timestamp()
+  `uploaded_date` DATE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -214,7 +214,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(150) NOT NULL,
   `contact_no` varchar(10) NOT NULL,
-  `registered_at` date NOT NULL DEFAULT current_timestamp(),
+  `registered_at` DATE NOT NULL,
   `isAdmin` int(11) NOT NULL DEFAULT 0,
   `user_address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
