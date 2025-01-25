@@ -1,3 +1,18 @@
+<?php
+    session_start();
+
+    // Ensure the user is logged in
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php");
+        exit();
+    }
+
+    // Include database connection
+    include "./adminHeader.php";
+    include "./sidebar.php";
+    include_once "./config/dbconnect.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,13 +26,6 @@
 </head>
 <body >
     
-        <?php
-            include "./adminHeader.php";
-            include "./sidebar.php";
-           
-            include_once "./config/dbconnect.php";
-        ?>
-
     <div id="main-content" class="container allContent-section py-4">
         <div class="row">
             <div class="col-sm-3">
