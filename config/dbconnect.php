@@ -1,9 +1,9 @@
 <?php
 
-$server = "localhost";
-$user = "root";
-$password = "";
-$db = "swiss_collection";
+$server = "project-database.cijf8kr42nak.us-east-1.rds.amazonaws.com";
+$user = "admin";
+$password = "TCCAlphaGroup";
+$db = "tcc_project";
 
 $conn = mysqli_connect($server,$user,$password,$db);
 

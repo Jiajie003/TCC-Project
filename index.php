@@ -1,6 +1,9 @@
 <?php
     session_start();
-
+    // Debug session variables
+    var_dump($_SESSION);
+    die();
+    
     // Ensure the user is logged in
     if (!isset($_SESSION['user_id'])) {
         header("Location: login.php");
