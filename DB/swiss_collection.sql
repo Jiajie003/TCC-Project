@@ -70,7 +70,7 @@ CREATE TABLE `orders` (
   `pay_method` varchar(50) NOT NULL,
   `pay_status` int(11) NOT NULL,
   `order_status` int(11) NOT NULL DEFAULT 0,
-  `order_date` date NOT NULL DEFAULT current_timestamp()
+  `order_date` DATETIME NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
