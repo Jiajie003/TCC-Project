@@ -8,7 +8,8 @@ include_once "./config/dbconnect.php";
 // Handle login form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    // Hash the input password with MD5
+    $password = md5(mysqli_real_escape_string($conn, $_POST['password']));
 
     // Query to check admin credentials
     $query = "SELECT * FROM users WHERE first_name = '$first_name' AND password = '$password' AND isAdmin = 1";
